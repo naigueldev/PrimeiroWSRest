@@ -10,6 +10,7 @@ package com.upf.graducao;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,7 +18,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-
+// RECURSO - MESMO
 @Path("/OlaMundo")
 public class OlaMundo {
 	// GET
@@ -38,11 +39,13 @@ public class OlaMundo {
 	// put, retornando a data atual (Dica, classe date)
 	@PUT
 	@Produces("text/plain")
-	public String dataAtual(){     
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		System.out.println(dtf.format(now));
-        return dtf.format(now).toString();
+	public String dataAtualPut(){     
+//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+//		LocalDateTime now = LocalDateTime.now();
+//		System.out.println(dtf.format(now));
+//        return dtf.format(now).toString();
+        
+        return new Date().toString();
 		
 	}
 
