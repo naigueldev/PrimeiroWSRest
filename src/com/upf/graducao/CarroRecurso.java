@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 @Path("/carros")
@@ -43,6 +44,13 @@ public class CarroRecurso {
 	public List<Carro> listaCarros(){
 //		pego a collections do hasmap -> arraylist -> list
 		return new ArrayList<Carro>(carrosMap.values());
+	}
+	
+	@Path("{id}")
+	@GET
+	@Produces("text/xml")
+	public Carro mostraCarro(@PathParam("id") int id){
+		return carrosMap.get(id);
 	}
 	
 	//POST - inserir um novo carro
